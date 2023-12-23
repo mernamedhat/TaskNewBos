@@ -6,7 +6,7 @@ import com.example.taskbos.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 @HiltViewModel
-class AlbumsDetailsViewModel  @Inject constructor(private val Repository: Repository = Repository())  : ViewModel() {
+class AlbumsDetailsViewModel  @Inject constructor(private val Repository: Repository)  : ViewModel() {
 
 
     fun getPhotos(

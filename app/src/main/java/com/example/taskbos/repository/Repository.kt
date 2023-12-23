@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 //@Inject
 
-class Repository @Inject constructor(private val api: TaskBostaService = ServiceBuilder.buildService()) {
+class Repository @Inject constructor(private val api: TaskBostaService) {
     suspend fun getUser() = api.getUser()
     suspend fun getAlbums(userId: Int) = api.getAlbums(userId)
     suspend fun getPhotos(albumId: Int) = api.getPhotos(albumId)

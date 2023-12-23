@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ProfileViewModel @Inject constructor(private val Repo: Repository = Repository()) : ViewModel() {
+class ProfileViewModel @Inject constructor(private val Repo: Repository) : ViewModel() {
 
 
     fun getHome() = liveData {

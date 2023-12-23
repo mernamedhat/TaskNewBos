@@ -19,7 +19,7 @@ object ServiceBuilder {
 
     @Singleton
     @Provides
-    fun buildService(): TaskBostaService {
+    fun buildService(): Retrofit {
 
         val gson = GsonBuilder()
             .setLenient()
@@ -41,7 +41,7 @@ object ServiceBuilder {
 
 
 
-        return retrofit.create(TaskBostaService::class.java)
+        return retrofit
 
 
     }
