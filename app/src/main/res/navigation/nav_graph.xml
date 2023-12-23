@@ -3,20 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_main"
-    >
+    app:startDestination="@id/fragment_main">
     <!-- MainFragment -->
     <fragment
         android:id="@+id/fragment_main"
-        android:name="com.example.taskbos.ui.home.ProfileFragment"
+        android:name="com.example.taskbos.ui.profile.ProfileFragment"
         android:label="fragment_view_balance"
         tools:layout="@layout/fragment_profile">
-
-
         <action
             android:id="@+id/fragment_profile_to_albumsDetails"
-            app:destination="@id/AlbumsDetailsFragment"
-            />
+            app:destination="@id/AlbumsDetailsFragment" />
 
     </fragment>
 
@@ -25,27 +21,22 @@
         android:name="com.example.taskbos.ui.albums.AlbumsDetailsFragment"
         android:label="fragment_view_balance"
         tools:layout="@layout/fragment_albums_details">
-<!--        <argument-->
-<!--            android:name="homeModel?"-->
-<!--            app:argType="com.example.taranim.model.response.HomeResponse" />-->
-<!--        <argument-->
-<!--            android:name="name"-->
-<!--            app:argType="string" />-->
-<!--        <argument-->
-<!--            android:name="id"-->
-<!--            app:argType="string" />-->
-<!--        <argument-->
-<!--            android:name="isFavo"-->
-<!--            app:argType="string" />-->
-<!--        <argument-->
-<!--            android:name="sound"-->
-<!--            app:argType="string" />-->
-<!--        <argument-->
-<!--            android:name="layrec"-->
-<!--            app:argType="string" />-->
-<!--        <argument-->
-<!--            android:name="youtube"-->
-<!--            app:argType="string" />-->
+
+        <argument
+            android:name="albumid"
+            app:argType="integer" />
+        <action
+            android:id="@+id/fragment_albumsDetails_to_PhotoDetails"
+            app:destination="@id/PhotoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/PhotoDetailsFragment"
+        android:name="com.example.taskbos.ui.PhotoDetailsFragment"
+        android:label="fragment_view_balance"
+        tools:layout="@layout/fragment_photo_details">
+        <argument
+            android:name="photo"
+            app:argType="string" />
 
 
     </fragment>

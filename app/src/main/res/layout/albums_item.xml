@@ -13,11 +13,8 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:text="sunt qui excepturi placeat culpa"
-            android:textAllCaps="true"
-            android:textColor="#6F1D1B"
-
+            android:textColor="@color/black"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold" />
     <View

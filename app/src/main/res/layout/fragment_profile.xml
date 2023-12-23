@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,16 +44,21 @@
             android:padding="@dimen/_5sdp"
             android:text="My Albums"
             android:textAllCaps="true"
-            android:textColor="#6F1D1B"
+            android:textColor="@color/black"
 
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold" />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
             android:orientation="vertical"
             android:id="@+id/album_rec"/>
+        <ProgressBar
+           android:layout_gravity="center"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 
     </LinearLayout>

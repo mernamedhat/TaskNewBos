@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/container"
     tools:context=".ui.albums.AlbumsDetailsFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/search"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#0000ffff"
+                android:layout_marginHorizontal="@dimen/_10ssp"
+                android:hint="Search in images .........."
+                android:padding="@dimen/_3sdp"
+                android:importantForAutofill="no"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:textColorHint="@color/black"
+
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+        <GridView
+            android:layout_marginTop="@dimen/_15sdp"
+            android:id="@+id/idGRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+             />
+        <ProgressBar
+            android:layout_gravity="center"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 
 
-</FrameLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout >

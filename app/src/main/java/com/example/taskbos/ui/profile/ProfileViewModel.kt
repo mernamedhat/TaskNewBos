@@ -1,4 +1,4 @@
-package com.example.taskbos.ui.home
+package com.example.taskbos.ui.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
@@ -19,6 +19,15 @@ class ProfileViewModel : ViewModel() {
     fun getHome() = liveData {
         emit(
             Repository().getUser()
+        )
+    }
+
+    fun getAlbums(
+        userId: Int,
+
+    ) = liveData {
+        emit(
+            Repository().getAlbums(userId)
         )
     }
 }

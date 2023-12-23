@@ -1,4 +1,4 @@
-package com.example.taskbos.ui.home
+package com.example.taskbos.ui.profile
 
 import android.annotation.SuppressLint
 import android.os.Build
