@@ -18,8 +18,9 @@ import com.example.taskbos.databinding.FragmentAlbumsDetailsBinding
 import com.example.taskbos.model.PhotosResponse
 import com.example.taskbos.prefrence.Preferences
 import com.example.taskbos.ui.profile.ProfileFragmentDirections
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class AlbumsDetailsFragment : Fragment() {
     private lateinit var binding: FragmentAlbumsDetailsBinding
     private lateinit var preferences: Preferences

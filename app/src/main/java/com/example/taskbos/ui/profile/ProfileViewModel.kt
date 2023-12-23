@@ -2,23 +2,19 @@ package com.example.taskbos.ui.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.example.taskbos.api.ServiceBuilder
+import com.example.taskbos.api.TaskBostaService
 import com.example.taskbos.repository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
+@HiltViewModel
+class ProfileViewModel @Inject constructor(private val Repo: Repository = Repository()) : ViewModel() {
 
-class ProfileViewModel : ViewModel() {
-//    private val _userData = MutableLiveData<UserResponse>()
-//    val userData: LiveData<UserResponse> get() = _userData
-//
-//    fun getUserData() {
-//        viewModelScope.launch {
-//            val user = repository.getUser()
-//            _userData.postValue(user)
-//        }
-//    }
 
     fun getHome() = liveData {
         emit(
-            Repository().getUser()
+            Repo.getUser()
         )
     }
 
@@ -27,7 +23,7 @@ class ProfileViewModel : ViewModel() {
 
     ) = liveData {
         emit(
-            Repository().getAlbums(userId)
+            Repo.getAlbums(userId)
         )
     }
 }

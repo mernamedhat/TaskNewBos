@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,14 +16,16 @@ import com.example.taskbos.api.InternetConnection
 
 import com.example.taskbos.model.AlbumsResponse
 import com.example.taskbos.prefrence.Preferences
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.random.Random
 
-
+@AndroidEntryPoint
 class ProfileFragment : Fragment(), AlbumAdapter.OnItemClickListener {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var preferences: Preferences
     private lateinit var albumsList: ArrayList<AlbumsResponse>
     private lateinit var albumsAdapter: AlbumAdapter
+    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +55,7 @@ class ProfileFragment : Fragment(), AlbumAdapter.OnItemClickListener {
     private fun fetchData() {
         val randomInt = Random.nextInt(0, 10)
         if (InternetConnection.isInternetConnected(requireContext())) {
-            val viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
+//            val viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
             viewModel.getHome().observe(requireActivity()) {
                 preferences.saveUserId(it.body()?.get(randomInt)?.id.toString())
                 binding.name.text = it.body()?.get(randomInt)?.name.toString()
@@ -74,7 +77,7 @@ class ProfileFragment : Fragment(), AlbumAdapter.OnItemClickListener {
 
     private fun fetchRec() {
         if (InternetConnection.isInternetConnected(requireContext())) {
-            val viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
+//            val viewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
             viewModel.getAlbums(preferences.getUserId()!!.toInt()).observe(requireActivity()) {
                 albumsList.clear()
                 binding.progressBar.visibility=View.GONE

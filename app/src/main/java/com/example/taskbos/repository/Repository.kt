@@ -3,12 +3,14 @@ package com.example.taskbos.repository
 
 import com.example.taskbos.api.ServiceBuilder
 import com.example.taskbos.api.TaskBostaService
+import javax.inject.Inject
 
 
 //@Inject
-class Repository  constructor(private val retrofit: TaskBostaService = ServiceBuilder.buildService()) {
-    suspend fun getUser() = retrofit.getUser()
-    suspend fun getAlbums(userId: Int) = retrofit.getAlbums(userId)
-    suspend fun getPhotos(albumId: Int) = retrofit.getPhotos(albumId)
+
+class Repository @Inject constructor(private val api: TaskBostaService = ServiceBuilder.buildService()) {
+    suspend fun getUser() = api.getUser()
+    suspend fun getAlbums(userId: Int) = api.getAlbums(userId)
+    suspend fun getPhotos(albumId: Int) = api.getPhotos(albumId)
 
 }
